@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-
+import 'package:shop_app/screens/sign_up/components/sign_up_form.dart';
 import '../../components/socal_card.dart';
 import '../../constants.dart';
-import 'components/sign_up_form.dart';
 
 class SignUpScreen extends StatelessWidget {
   static String routeName = "/sign_up";
 
   const SignUpScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +50,7 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'By continuing your confirm that you agree \nwith our Term and Condition',
+                    'By continuing you confirm that you agree \nwith our Terms and Conditions',
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodySmall,
                   )

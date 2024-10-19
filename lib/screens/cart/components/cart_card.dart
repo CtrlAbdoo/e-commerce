@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:shop_app/data/models/Cart.dart';
 import '../../../constants.dart';
-import '../../../models/Cart.dart';
-
 class CartCard extends StatelessWidget {
   const CartCard({
     Key? key,
