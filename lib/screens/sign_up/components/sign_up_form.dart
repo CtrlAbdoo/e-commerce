@@ -53,7 +53,6 @@ class _SignUpFormState extends State<SignUpForm> {
           context: context,
         );
         ToastService.showSuccessToast("Signed up successfully!");
-        Navigator.pushReplacementNamed(context, SignInScreen.routeName);
       } catch (e) {
         ToastService.showErrorToast("Sign-up failed. Please try again.");
       } finally {

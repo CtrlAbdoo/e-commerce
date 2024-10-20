@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:shop_app/data/services/auth_service.dart';
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
 import '../../forgot_password/forgot_password_screen.dart';
-import '../../login_success/login_success_screen.dart';
+import '../../init_screen.dart'; // Import InitScreen
 
 class SignForm extends StatefulWidget {
   const SignForm({super.key});
@@ -66,8 +66,6 @@ class _SignFormState extends State<SignForm> {
             decoration: const InputDecoration(
               labelText: "Email",
               hintText: "Enter your email",
-              // If  you are using latest version of flutter then lable text and hint text shown like this
-              // if you r using flutter less then 1.20.* then maybe this is not working properly
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
             ),
@@ -97,8 +95,6 @@ class _SignFormState extends State<SignForm> {
             decoration: const InputDecoration(
               labelText: "Password",
               hintText: "Enter your password",
-              // If  you are using latest version of flutter then lable text and hint text shown like this
-              // if you r using flutter less then 1.20.* then maybe this is not working properly
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Lock.svg"),
             ),
@@ -133,7 +129,11 @@ class _SignFormState extends State<SignForm> {
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                Navigator.pushReplacementNamed(context, LoginSuccessScreen.routeName);
+                AuthService().signin(
+                  email: email!,
+                  password: password!,
+                  context: context,
+                );
               }
             },
             child: const Text("Continue"),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:shop_app/data/services/auth_service.dart';
 import '../../components/no_account_text.dart';
 import '../../components/socal_card.dart';
 import 'components/sign_form.dart';
@@ -8,8 +8,11 @@ class SignInScreen extends StatelessWidget {
   static String routeName = "/sign_in";
 
   const SignInScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final AuthService _authService = AuthService(); // Create an instance of AuthService
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Sign In"),
@@ -43,7 +46,9 @@ class SignInScreen extends StatelessWidget {
                     children: [
                       SocalCard(
                         icon: "assets/icons/google-icon.svg",
-                        press: () {},
+                        press: () async {
+                          await _authService.signInWithGoogle(context: context); // Call Google Sign-In
+                        },
                       ),
                       SocalCard(
                         icon: "assets/icons/facebook-2.svg",
