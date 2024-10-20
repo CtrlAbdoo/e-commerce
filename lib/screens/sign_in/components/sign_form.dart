@@ -4,7 +4,6 @@ import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
 import '../../forgot_password/forgot_password_screen.dart';
-import '../../init_screen.dart'; // Import InitScreen
 
 class SignForm extends StatefulWidget {
   const SignForm({super.key});
