@@ -145,6 +145,7 @@ List<Product> demoProducts = [
       const Color(0xFF836DB8),
       const Color(0xFFDECB9C),
       Colors.white,
+
     ],
     title: "Gloves XC Omega - Polygon",
     price: 36.55,
